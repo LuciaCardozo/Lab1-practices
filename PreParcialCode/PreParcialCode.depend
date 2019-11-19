@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1574176943 source:c:\users\lucia\desktop\abm pantalla\preparcialcode\employee.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"Employee.h"
+	"LinkedList.h"
+
+1574176007 c:\users\lucia\desktop\abm pantalla\preparcialcode\employee.h
+	"LinkedList.h"
+
+1574174672 source:c:\users\lucia\desktop\abm pantalla\preparcialcode\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1574175937 c:\users\lucia\desktop\abm pantalla\preparcialcode\linkedlist.h
+
+1574176351 source:c:\users\lucia\desktop\abm pantalla\preparcialcode\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Employee.h"
+	"LinkedList.h"
+	"Parser.h"
+
+1574126284 c:\users\lucia\desktop\abm pantalla\preparcialcode\parser.h
+	"LinkedList.h"
+
+1574128659 source:c:\users\lucia\desktop\abm pantalla\preparcialcode\parser.c
+	"LinkedList.h"
+	"Employee.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+

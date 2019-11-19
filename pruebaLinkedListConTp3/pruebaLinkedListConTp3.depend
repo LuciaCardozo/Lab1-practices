@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1574135681 source:c:\users\lucia\desktop\abm pantalla\pruebalinkedlistcontp3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"utn.h"
+	"parser.h"
+	"Controller.h"
+
+1574135264 c:\users\lucia\desktop\abm pantalla\pruebalinkedlistcontp3\linkedlist.h
+
+1574135257 c:\users\lucia\desktop\abm pantalla\pruebalinkedlistcontp3\employee.h
+
+1574135434 c:\users\lucia\desktop\abm pantalla\pruebalinkedlistcontp3\utn.h
+
+1574135346 c:\users\lucia\desktop\abm pantalla\pruebalinkedlistcontp3\parser.h
+
+1574135259 c:\users\lucia\desktop\abm pantalla\pruebalinkedlistcontp3\controller.h
+
+1574135261 source:c:\users\lucia\desktop\abm pantalla\pruebalinkedlistcontp3\employee.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"Employee.h"
+
+1574135262 source:c:\users\lucia\desktop\abm pantalla\pruebalinkedlistcontp3\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1574135467 source:c:\users\lucia\desktop\abm pantalla\pruebalinkedlistcontp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1574135344 source:c:\users\lucia\desktop\abm pantalla\pruebalinkedlistcontp3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1574135429 source:c:\users\lucia\desktop\abm pantalla\pruebalinkedlistcontp3\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
