@@ -18,14 +18,14 @@ Employee* employee_new()
 
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char *sueldo)
 {
-	Employee* pEmp=employee_new();
+	Employee* pEmp = employee_new();
 	int auxId;
 	int auxHoras;
 	int auxSueldo;
-	auxId=atoi(idStr);
-	auxHoras=atoi(horasTrabajadasStr);
-	auxSueldo=atoi(sueldo);
-	if(pEmp!=NULL && idStr!=NULL && nombreStr!=NULL && horasTrabajadasStr!=NULL && sueldo!=NULL)
+	auxId = atoi(idStr);
+	auxHoras = atoi(horasTrabajadasStr);
+	auxSueldo = atoi(sueldo);
+	if(pEmp != NULL && idStr != NULL && nombreStr != NULL && horasTrabajadasStr != NULL && sueldo != NULL)
     {
     	employee_setId(pEmp,auxId);
     	employee_setNombre(pEmp,nombreStr);
@@ -42,11 +42,11 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
 
 int employee_delete(Employee* this)
 {
-    int ret=-1;
-    if(this!=NULL)
+    int ret = -1;
+    if(this != NULL)
     {
         free(this);
-        ret=0;
+        ret = 0;
     }
     return ret;
 }
@@ -220,11 +220,11 @@ int swapEmpId(void* pEmpUno,void* pEmpDos)
 
 
 
-static int idMax=0;
+static int idMax = 0;
 
 void employe_idInit(int id)
 {
-    idMax=id+1;
+    idMax = id+1;
 }
 
 int generarId()

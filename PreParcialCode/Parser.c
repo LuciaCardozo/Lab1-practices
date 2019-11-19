@@ -10,7 +10,7 @@ int parser_parseEmpleados(char* fileName, LinkedList* listaEmpleados)
     char aux[3][128];
     Empleado* pEmp;
     FILE* pFile = NULL;
-    if(fileName!=NULL && listaEmpleados!=NULL)
+    if(fileName != NULL && listaEmpleados != NULL)
     {
         pFile = fopen(fileName,"r");
         if(pFile != NULL)
@@ -19,8 +19,8 @@ int parser_parseEmpleados(char* fileName, LinkedList* listaEmpleados)
             do
             {
                 fscanf(pFile,"%[^,],%[^,],%[^\n]\n",*(aux),*(aux+1),*(aux+2));
-                pEmp=empleado_newParametros(*(aux),*(aux+1),*(aux+2));
-                if(pEmp!=NULL)
+                pEmp = empleado_newParametros(*(aux),*(aux+1),*(aux+2));
+                if(pEmp != NULL)
                 {
                     if(!ll_add(listaEmpleados,pEmp))
                     {

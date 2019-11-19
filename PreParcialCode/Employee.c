@@ -10,21 +10,21 @@ void em_calcularSueldo(void* p)
 	// recibo elemento empleado como void.
 	// hacer calculo de sueldo y escribirlo en campo sueldo del empleado
 	int horas;
-	int sueldo=0;
-	if(p!=NULL)
+	int sueldo = 0;
+	if(p != NULL)
     {
         employee_getHorasTrabajadas(p,&horas);
-        if(horas>0 && horas<=120)
+        if(horas > 0 && horas <= 120)
         {
-            sueldo=horas*180;
+            sueldo = horas*180;
         }
-        if(horas>120 && horas<=160)
+        if(horas > 120 && horas <= 160)
         {
-            sueldo=horas*240;
+            sueldo = horas*240;
         }
-        if(horas>160 && horas<=240)
+        if(horas > 160 && horas <= 240)
         {
-            sueldo=horas*350;
+            sueldo = horas*350;
         }
         employee_setSueldo(p,sueldo);
     }
@@ -35,12 +35,12 @@ int al_map(LinkedList* listaEmpleados,void(*pFunc)(void*))
     int ret = -1;
     int i;
     void* pElement;
-    if(listaEmpleados!=NULL)
+    if(listaEmpleados != NULL)
     {
-        for(i=0;i<ll_len(listaEmpleados);i++)
+        for(i=0 ; i<ll_len(listaEmpleados) ; i++)
         {
-            pElement=ll_get(listaEmpleados,i);
-            if(pElement!=NULL)
+            pElement = ll_get(listaEmpleados,i);
+            if(pElement != NULL)
             {
                 pFunc(pElement);
                 ll_set(listaEmpleados,i,pElement);
@@ -56,13 +56,13 @@ LinkedList* al_filter(LinkedList* this,int(*pFunc)(void*))//hacer funcion por cr
     LinkedList* listaFiltrada;
     void* pAux;
     int i;
-    if(this!=NULL)
+    if(this != NULL)
     {
         listaFiltrada = ll_newLinkedList();
-        for(i=0;i<ll_len(this);i++)
+        for(i=0 ; i<ll_len(this) ; i++)
         {
-            pAux=ll_get(this,i);
-            if(pFunc(pAux)==1)
+            pAux = ll_get(this,i);
+            if(pFunc(pAux) == 1)
             {
                 ll_add(listaFiltrada,pAux);
             }
@@ -85,12 +85,12 @@ Empleado* empleado_new()
 
 Empleado* empleado_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr)
 {
-	Empleado* pEmp=empleado_new();
+	Empleado* pEmp = empleado_new();
 	int auxId;
 	int auxHoras;
-	auxId=atoi(idStr);
-	auxHoras=atoi(horasTrabajadasStr);
-	if(pEmp!=NULL && idStr!=NULL && nombreStr!=NULL && horasTrabajadasStr!=NULL)
+	auxId = atoi(idStr);
+	auxHoras = atoi(horasTrabajadasStr);
+	if(pEmp != NULL && idStr != NULL && nombreStr != NULL && horasTrabajadasStr != NULL)
     {
     	employee_setId(pEmp,auxId);
     	employee_setNombre(pEmp,nombreStr);
@@ -105,11 +105,11 @@ Empleado* empleado_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
 
 int employee_delete(Empleado* this)
 {
-    int ret=-1;
-    if(this!=NULL)
+    int ret = -1;
+    if(this != NULL)
     {
         free(this);
-        ret=0;
+        ret = 0;
     }
     return ret;
 }

@@ -72,7 +72,7 @@ int controller_ultimoIdEmployee(LinkedList* pArrayListEmployee)
     if(pArrayListEmployee != NULL)
     {
         len = ll_len(pArrayListEmployee);
-        for(i=0; i<len; i++)
+        for(i=0 ; i<len ; i++)
         {
             pEmp = (Employee*)ll_get(pArrayListEmployee,i);
             employee_getId(pEmp,&auxId);
@@ -104,8 +104,8 @@ int controller_buscarEmployeePorId(LinkedList* pArrayListEmployee,int id,int* po
     int len;
     if(pArrayListEmployee != NULL)
     {
-        len=ll_len(pArrayListEmployee);
-        for(i=0; i<len; i++)
+        len = ll_len(pArrayListEmployee);
+        for(i=0 ; i<len ; i++)
         {
             pEmp = (Employee*)ll_get(pArrayListEmployee,i);
             employee_getId(pEmp,&auxId);
@@ -128,7 +128,7 @@ int controller_buscarEmployeePorId(LinkedList* pArrayListEmployee,int id,int* po
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
     Employee* nuevoEmpleado;
-    nuevoEmpleado=employee_new();
+    nuevoEmpleado = employee_new();
     int ret = -1;
     char auxNombre[51];
     int auxHoras;
@@ -200,7 +200,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
                             }
                             break;
                         case 2:
-                            if(utn_getValidInt("\nIngrese horas trabajadas: ","\nError",&auxHoras,0,99999,2)==0)
+                            if(utn_getValidInt("\nIngrese horas trabajadas: ","\nError",&auxHoras,0,99999,2) == 0)
                             {
                                 employee_setHorasTrabajadas(pEmp,auxHoras);
                             }
@@ -210,7 +210,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
                             }
                             break;
                         case 3:
-                            if(utn_getValidInt("\nIngrese sueldo: ","\nError",&auxSueldo,0,99999,2)==0)
+                            if(utn_getValidInt("\nIngrese sueldo: ","\nError",&auxSueldo,0,99999,2) == 0)
                             {
                                 employee_setSueldo(pEmp,auxSueldo);
                             }
@@ -299,7 +299,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
         if(ll_len(pArrayListEmployee) > 0)
         {
             len = ll_len(pArrayListEmployee);
-            for(i=0; i<len; i++)
+            for(i=0 ; i<len ; i++)
             {
                 controller_mostrarEmployeePorIdEnFila(pArrayListEmployee,i);
             }
@@ -389,9 +389,9 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
         {
             if(utn_getValidInt("\n\tModo de ordenamiento\n1-Ascendente\n2-Descendente\nIngrese opcion: ","\nError",&order,1,2,2)==0)
             {
-                if(order==2)
+                if(order == 2)
                 {
-                    order=0;
+                    order = 0;
                 }
                 switch(opcion)
                 {
@@ -442,9 +442,9 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
     {
         len = ll_len(pArrayListEmployee);
         fprintf(pFile,"id,nombre,horasTrabajadas,sueldo\n");
-        for(i=0; i<len; i++)
+        for(i=0 ; i<len ; i++)
         {
-            pEmp=(Employee*)ll_get(pArrayListEmployee,i);
+            pEmp = (Employee*)ll_get(pArrayListEmployee,i);
             employee_getId(pEmp,&auxId);
             employee_getNombre(pEmp,auxNombre);
             employee_getHorasTrabajadas(pEmp,&auxHoras);
@@ -476,7 +476,7 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
     if(pArrayListEmployee != NULL && pFile != NULL)
     {
         len = ll_len(pArrayListEmployee);
-        for(i=0;i<len;i++)
+        for(i=0 ; i<len ; i++)
         {
             pEmp = (Employee*)ll_get(pArrayListEmployee,i);
             fwrite(pEmp,sizeof(Employee),1,pFile);
