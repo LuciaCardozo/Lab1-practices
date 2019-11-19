@@ -13,9 +13,6 @@ struct LinkedList
     int size;
 }typedef LinkedList;
 
-#endif // LINKEDLIST_H_INCLUDED
-
-//Publicas
 LinkedList* ll_newLinkedList(void);
 int ll_len(LinkedList* this);
 Node* test_getNode(LinkedList* this, int nodeIndex);
@@ -35,3 +32,7 @@ int ll_containsAll(LinkedList* this,LinkedList* this2);
 LinkedList* ll_subList(LinkedList* this,int from,int to);
 LinkedList* ll_clone(LinkedList* this);
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);
+
+#endif // LINKEDLIST_H_INCLUDED
+
+//Publicas

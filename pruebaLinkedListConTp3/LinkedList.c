@@ -15,12 +15,12 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement);
  */
 LinkedList* ll_newLinkedList(void)
 {
-    LinkedList* this= NULL;
-    this=(LinkedList*)malloc(sizeof(LinkedList));
-    if(this!=NULL)
+    LinkedList* this = NULL;
+    this = (LinkedList*)malloc(sizeof(LinkedList));
+    if(this != NULL)
     {
-        this->pFirstNode=NULL;
-        this->size=0;
+        this->pFirstNode = NULL;
+        this->size = 0;
     }
     return this;
 }
@@ -34,13 +34,12 @@ LinkedList* ll_newLinkedList(void)
 int ll_len(LinkedList* this)
 {
     int returnAux = -1;
-    if(this!=NULL)
+    if(this != NULL)
     {
-        returnAux=this->size;
+        returnAux = this->size;
     }
     return returnAux;
 }
-
 
 /** \brief  Obtiene un nodo de la lista
  *
@@ -52,16 +51,16 @@ int ll_len(LinkedList* this)
  */
 static Node* getNode(LinkedList* this, int nodeIndex)
 {
-    Node* pNode=NULL;
+    Node* pNode = NULL;
     int i;
-    if(this!=NULL && nodeIndex>=0 && nodeIndex<ll_len(this))
+    if(this != NULL && nodeIndex >= 0 && nodeIndex < ll_len(this))
     {
-        pNode=this->pFirstNode;
-        for(i=0;i<nodeIndex;i++)
+        pNode = this->pFirstNode;
+        for(i=0 ; i<nodeIndex ; i++)
         {
-            if(pNode!=NULL)
+            if(pNode != NULL)
             {
-                pNode=pNode->pNextNode;
+                pNode = pNode->pNextNode;
             }
         }
     }
@@ -80,7 +79,6 @@ Node* test_getNode(LinkedList* this, int nodeIndex)
 {
     return getNode(this, nodeIndex);
 }
-
 
 /** \brief Agrega y enlaza un nuevo nodo a la lista
  *
@@ -131,7 +129,6 @@ int test_addNode(LinkedList* this, int nodeIndex,void* pElement)
     return addNode(this,nodeIndex,pElement);
 }
 
-
 /** \brief  Agrega un elemento a la lista
  * \param pList LinkedList* Puntero a la lista
  * \param pElement void* Puntero al elemento a ser agregado
@@ -169,7 +166,6 @@ void* ll_get(LinkedList* this, int index)
     return returnAux;
 }
 
-
 /** \brief Modifica un elemento de la lista
  *
  * \param this LinkedList* Puntero a la lista
@@ -194,7 +190,6 @@ int ll_set(LinkedList* this, int index,void* pElement)
     }
     return returnAux;
 }
-
 
 /** \brief Elimina un elemento de la lista
  *
@@ -286,14 +281,14 @@ int ll_indexOf(LinkedList* this, void* pElement)
     int returnAux = -1;
     Node* pNode;
     int i;
-    if(this!=NULL)
+    if(this != NULL)
     {
-    	for(i=0;i<ll_len(this);i++)
+    	for(i=0 ; i<ll_len(this) ; i++)
     	{
-    		pNode=getNode(this,i);
-			if(pNode->pElement==pElement)
+    		pNode = getNode(this,i);
+			if(pNode->pElement == pElement)
 			{
-				returnAux=i;
+				returnAux = i;
 				break;
 			}
     	}
@@ -339,13 +334,12 @@ int ll_isEmpty(LinkedList* this)
 int ll_push(LinkedList* this, int index, void* pElement)
 {
     int returnAux = -1;
-    if(this!=NULL)
+    if(this != NULL)
     {
-        returnAux=addNode(this,index,pElement);
+        returnAux = addNode(this,index,pElement);
     }
     return returnAux;
 }
-
 
 /** \brief Elimina el elemento de la posicion indicada y retorna su puntero
  *
@@ -358,14 +352,13 @@ int ll_push(LinkedList* this, int index, void* pElement)
 void* ll_pop(LinkedList* this,int index)
 {
     void* returnAux = NULL;
-    if(this!=NULL && index>=0 && index<ll_len(this))
+    if(this != NULL && index >= 0 && index < ll_len(this))
     {
-        returnAux=ll_get(this,index);
+        returnAux = ll_get(this,index);
         ll_remove(this,index);
     }
     return returnAux;
 }
-
 
 /** \brief  Determina si la lista contiene o no el elemento pasado como parametro
  *
@@ -407,10 +400,10 @@ int ll_containsAll(LinkedList* this,LinkedList* this2)
 {
     int returnAux = -1;
     int i;
-    if(this!=NULL && this2!=NULL)
+    if(this != NULL && this2 != NULL)
     {
         returnAux = 1;
-        for(i=0;i<ll_len(this2);i++)
+        for(i=0 ; i<ll_len(this2) ; i++)
         {
             if(!ll_contains(this,ll_get(this2,i)))
             {
@@ -448,7 +441,6 @@ LinkedList* ll_subList(LinkedList* this,int from,int to)
 }
 
 
-
 /** \brief Crea y retorna una nueva lista con los elementos de la lista pasada como parametro
  *
  * \param pList LinkedList* Puntero a la lista
@@ -458,13 +450,12 @@ LinkedList* ll_subList(LinkedList* this,int from,int to)
 LinkedList* ll_clone(LinkedList* this)
 {
     LinkedList* cloneArray = NULL;
-    if(this!=NULL)
+    if(this != NULL)
     {
-        cloneArray=ll_subList(this,0,ll_len(this));
+        cloneArray = ll_subList(this,0,ll_len(this));
     }
     return cloneArray;
 }
-
 
 /** \brief Ordena los elementos de la lista utilizando la funcion criterio recibida como parametro
  * \param pList LinkedList* Puntero a la lista
@@ -475,41 +466,40 @@ LinkedList* ll_clone(LinkedList* this)
  */
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 {
-    int returnAux =-1;
+    int returnAux = -1;
     int i;
     int j;
-    int len=ll_len(this);
+    int len = ll_len(this);
     int auxFunc;
     void* auxSort;
-    if(this!=NULL && pFunc!=NULL)
+    if(this != NULL && pFunc != NULL)
     {
-        if(order==0 || order==1)
+        if(order == 0 || order == 1)
         {
-            for(i=0;i<len-1;i++)
+            for(i=0 ; i<len-1 ; i++)
             {
-                for(j=i+1;j<len;j++)
+                for(j=i+1 ; j<len ; j++)
                 {
-                    auxFunc= pFunc(ll_get(this,i),ll_get(this,j));
-                    if(auxFunc>0 && order==1)
+                    auxFunc = pFunc(ll_get(this,i),ll_get(this,j));
+                    if(auxFunc > 0 && order == 1)
                     {
-                        auxSort=ll_get(this,i);
+                        auxSort = ll_get(this,i);
                         ll_set(this,i,ll_get(this,j));
                         ll_set(this,j,auxSort);
                     }
-                    else if(auxFunc<0 && order==0)
+                    else if(auxFunc < 0 && order == 0)
                     {
-                        auxSort=ll_get(this,i);
+                        auxSort = ll_get(this,i);
                         ll_set(this,i,ll_get(this,j));
                         ll_set(this,j,auxSort);
                     }
                 }
             }
-            if(i==len-1)
+            if(i == len-1)
             {
                 returnAux = 0;
             }
         }
     }
     return returnAux;
-
 }
