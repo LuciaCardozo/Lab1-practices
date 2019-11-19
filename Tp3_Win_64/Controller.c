@@ -379,13 +379,13 @@ int controller_mostrarEmployeePorId(LinkedList* pArrayListEmployee, int index)
  */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
-    int opcion;
+        int opcion;
     int order;
     int ret = -1;
-    if(pArrayListEmployee != NULL)
+    if(pArrayListEmployee!=NULL)
     {
-        if(utn_getValidInt("\nQue desea ordenar?\n1-Nombre\n2-Horas trabajadas\n3-Sueldo\nIngrese opcion: ",
-                           "\nError",&opcion,1,3,2)==0)
+        if(utn_getValidInt("\nQue desea ordenar?\n1-Nombre\n2-Horas trabajadas\n3-Sueldo\n4-Id\nIngrese opcion: ",
+                           "\nError",&opcion,1,4,2)==0)
         {
             if(utn_getValidInt("\n\tModo de ordenamiento\n1-Ascendente\n2-Descendente\nIngrese opcion: ","\nError",&order,1,2,2)==0)
             {
@@ -405,6 +405,10 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
                         break;
                     case 3:
                         ll_sort(pArrayListEmployee,swapEmpSueldo,order);
+                        controller_ListEmployee(pArrayListEmployee);
+                        break;
+                    case 4:
+                        ll_sort(pArrayListEmployee,swapEmpId,order);
                         controller_ListEmployee(pArrayListEmployee);
                         break;
                 }
