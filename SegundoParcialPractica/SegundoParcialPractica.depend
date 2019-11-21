@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1574365705 source:c:\users\lucia\desktop\abm pantalla\segundoparcialpractica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"linkedList.h"
+	"parser.h"
+	"ventas.h"
+
+1574365600 source:c:\users\lucia\desktop\abm pantalla\segundoparcialpractica\ventas.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"ventas.h"
+
+1574363832 c:\users\lucia\desktop\abm pantalla\segundoparcialpractica\ventas.h
+	"linkedList.h"
+
+1574308113 source:c:\users\lucia\desktop\abm pantalla\segundoparcialpractica\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1574308113 c:\users\lucia\desktop\abm pantalla\segundoparcialpractica\linkedlist.h
+
+1574305445 c:\users\lucia\desktop\abm pantalla\segundoparcialpractica\parser.h
+	"linkedList.h"
+
+1574308428 source:c:\users\lucia\desktop\abm pantalla\segundoparcialpractica\parser.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+	"linkedList.h"
+	"ventas.h"
+
